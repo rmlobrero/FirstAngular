@@ -1,0 +1,48 @@
+
+<!--Principio del toolbar -->
+<mat-toolbar>
+    <mat-toolbar-row>      
+      <button mat-icon-button class="d-md-none" (click)="sidenav.toggle()" >
+        <mat-icon>menu</mat-icon>
+      </button>
+      <a [routerLink]="'/Menu'"><img src="../assets/WanquequesLabss.svg" alt="WanquequesLabs" class="Logo"/></a>
+      <div class="d-none d-md-block">
+        <a mat-button [routerLink]="'/novedades'"><mat-icon>whatshot</mat-icon>Novedades</a>
+        <a mat-button [routerLink]="'/menu'"><mat-icon> restaurant_menu</mat-icon>  Menu </a>
+        <a mat-button [routerLink]="'/locales'"><mat-icon>store</mat-icon>Locales</a>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <!--Fin del toolbar -->
+  <!--Principio del navegador Lateral-->
+  <mat-sidenav-container>
+
+    <!--Este seria el menu, y el "#sidenav" un ID que asi se pone en angular-->
+    <mat-sidenav #sidenav>
+
+      <!--Esta es una lista de opciones que no es obligatoria pero si es visualmente agradable
+      Pasa lo mismo con el mat-icon, es opcional pero agrega referencias visuales-->
+      <mat-nav-list>
+        <a mat-list-item [routerLink]="'/novedades'"><mat-icon>whatshot</mat-icon>Info</a>
+        <a mat-list-item [routerLink]="'/menu'"><mat-icon> restaurant_menu</mat-icon> Menu</a>
+        <a mat-list-item [routerLink]="'/locales'"><mat-icon>store</mat-icon>Locales</a>
+        <a mat-list-item (click)="sidenav.toggle()" mat-list-item><mat-icon>arrow_back</mat-icon> Cerrar</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <!--Aca finaliza la lista de opciones-->
+      <!--Inicia el cuerpo de la aplicacion-->
+      <mat-sidenav-content>
+               <router-outlet></router-outlet>
+        <footer>
+          <footer class="page-footer font-small blue">
+
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3">© 2021 Copyright:
+              <a href="https://www.linkedin.com/in/ramiro-lobrero-261522193/"> Ramiro Máximo Lobrero</a>
+            </div>
+            <!-- Copyright -->
+          
+          </footer>
+        </footer>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
