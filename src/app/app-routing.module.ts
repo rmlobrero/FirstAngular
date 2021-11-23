@@ -10,7 +10,7 @@ const routes: Routes = [{ path: 'menu', component: MenuComponent },
 { path: 'DetalledelItem', component: ItemDetailComponent },
 { path: 'novedades', component: NovedadesComponent },
 { path: 'locales', component: LocalesComponent },
-{ path: '**', component: MenuComponent }];
+{ path: '**', component: NovedadesComponent }];
 
 
 
